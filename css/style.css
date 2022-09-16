@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(128, 255, 255);
+    margin: 5px;
+}
+
+#background {
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow-y: hidden;
+}
+
+#untouchableLayer {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+}
+
+#spinner {
+    z-index: 2;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#welcome {
+    z-index: 999;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.welcomeInsideDiv {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-radius: 4px;
+}
+
+#welcomeInfo {
+    margin: 10px 10px 60px;
+    text-align: center;
+}
+
+#welcomeOkeyButton {
+    padding: 7px 40px;
+    border-radius: 3px;
+    border: 1px solid rgb(255, 255, 255);
+    display: none;
+}
+
+#welcomeOkeyButton:hover {
+    background-color: #000;
+    opacity: 0.6;
+}
+
+.colorful-bg {
+    background: linear-gradient(205deg, #05b587, #00b7cf, #b916da, #e2e628);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    -o-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+
+    50% {
+        background-position: 50% 100%
+    }
+
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+
+    50% {
+        background-position: 50% 100%
+    }
+
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+
+    50% {
+        background-position: 50% 100%
+    }
+
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 50% 0%
+    }
+
+    50% {
+        background-position: 50% 100%
+    }
+
+    100% {
+        background-position: 50% 0%
+    }
+}
+
+
+#spinner p {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+}
+
+#navigatorParent {
+    position: fixed;
+    z-index: 500;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#minimizeButton {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px #ff0000 solid;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-radius: 4px;
+    margin: 4px 0;
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    text-align: center;
+}
+
+#navigator {
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-radius: 4px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    transition: 500ms;
+}
+
+#titleTextBox {
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin: 4px 6px;
+    margin-bottom: 0px;
+    color: rgb(128, 255, 255);
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    border-right: 4px solid greenyellow;
+    border-left: 4px solid greenyellow;
+}
+
+#controls {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 300px;
+    margin: 6px;
+}
+
+#controlMenu {
+    text-align: center;
+    width: 180px;
+    margin: 5px auto;
+}
+
+#citiesBox {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 300px;
+    height: 268px;
+    margin: 6px;
+}
+
+ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #781cb9;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#selectBox {
+    list-style-type: none;
+    color: white;
+    height: 239px;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 1.2rem;
+}
+
+#selectBox li {
+    margin: 0 3px;
+    border-radius: 4px;
+    padding: 3px 10px;
+    border-bottom: 1px solid rgb(0, 128, 255);
+}
+
+#selectBox li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#selectBox li:hover {
+    opacity: 0.5;
+    transition: 600ms;
+    background-color: black;
+}
+
+#volumeLevel {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.17rem;
+}
+
+#volumeButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: -4px;
+}
+
+#infoSection {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 6px;
+    margin-left: 0px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: #fff;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoSection h1 {
+    margin: 5px;
+}
+
+#infoSection small {
+    margin: 5px;
+}
+
+#supportMe {
+    display: flex;
+    align-items: center;
+    background-color: #80ffff;
+    border-radius: 4px;
+    padding: 6px;
+    margin-top: 5px;
+}
+
+#supportMe a{
+    color: #000 !important;
+}
+
+#videoSource {
+    margin-top: 10px;
+}
+
+/* Welcome Spinner */
+
+.welcomeSpinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+/* SPINNER */
+
+.sk-cube-grid {
+    width: 80px;
+    height: 80px;
+    margin: 80px auto 25px;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
